@@ -16,7 +16,13 @@ figure(6);imshow([p11,p21,p31]);impixelinfo;
 figure(7);imshow([p41,p51,p61]);impixelinfo;
 
 figure(8);imshow(d);impixelinfo
-c=impixel;
+%c=impixel;
+%%
+c=180;
 umbral=min(c(:));
+
 d=[p21,p1];e=d;e(e<umbral)=0;e(e>0)=255;
 figure(9);imshow([d;e]);impixelinfo
+f=p21,f(f<c)=0;f(f>0)=255;
+figure;imshow(f)
+imwrite(f,'placa_bw.bmp');
